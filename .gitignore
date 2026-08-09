@@ -1,0 +1,7 @@
+*
+
+!.gitignore
+!push_swap.h
+!main.c
+!utils.c
+!README.md
