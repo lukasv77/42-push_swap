@@ -6,7 +6,7 @@
 /*   By: llinda <llinda@student.42warsaw.pl>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/08 16:59:45 by llinda            #+#    #+#             */
-/*   Updated: 2026/08/09 11:48:15 by llinda           ###   ########.fr       */
+/*   Updated: 2026/08/09 13:19:50 by llinda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,18 @@ void	ft_dlstdelone(t_dlist **node)
 
 	if (!node)
 		return ;
-	(*node)->prev->next = (*node)->next;
-	(*node)->next->prev = (*node)->prev;	
+	if ((*node)->next && (*node)->prev && (*node)->next == (*node)->prev)
+	{
+		(*node)->prev->next = NULL;
+		(*node)->next->prev = NULL;	
+	}
+	else if ((*node)->next && (*node)->prev && (*node)->next != (*node)->prev)
+	{
+		(*node)->prev->next = (*node)->next;
+		(*node)->next->prev = (*node)->prev;	
+	}
+	else
+		return (free(node));
 	old_head = *node;
 	*node = (*node)->next;
 	free(old_head);

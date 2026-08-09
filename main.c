@@ -6,7 +6,7 @@
 /*   By: llinda <llinda@student.42warsaw.pl>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/08 13:45:41 by llinda            #+#    #+#             */
-/*   Updated: 2026/08/09 11:56:36 by llinda           ###   ########.fr       */
+/*   Updated: 2026/08/09 13:06:49 by llinda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,8 +81,20 @@ void	bubble_sort(t_dlist **a, t_dlist **b, t_data *data)
 			r(a);
 			check = true;
 		}
-//		p(a, b, data);
-//		ft_dlstdelone(a);
+		if (swap_cnt != 0)
+		{
+			p(a, b, data);
+			ft_dlstdelone(a);
+		}
+		else
+		{
+			while (*b)
+			{
+				r(a);
+				p(b, a, data);
+				ft_dlstdelone(b);
+			}
+		}
 	}
 }
 
