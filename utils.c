@@ -6,101 +6,40 @@
 /*   By: llinda <llinda@student.42warsaw.pl>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/08 16:59:45 by llinda            #+#    #+#             */
-/*   Updated: 2026/08/09 13:19:50 by llinda           ###   ########.fr       */
+/*   Updated: 2026/08/09 15:47:19 by llinda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdbool.h>
-#include <stdlib.h>
 #include <stdio.h>
 
-t_dlist	*ft_dlstnew(int content)
+t_dlist	*create_a(int *args, int size)
 {
-	t_dlist	*node;
+	int		i;
+	t_dlist	*head;
 
-	node = malloc(sizeof(t_dlist));
-	if (!node)
-		return (NULL);
-	node->content = content;
-	node->prev = NULL;
-	node->next = NULL;
-	return (node);
-}
-
-void	ft_dlstdelone(t_dlist **node)
-{
-	t_dlist	*old_head;
-
-	if (!node)
-		return ;
-	if ((*node)->next && (*node)->prev && (*node)->next == (*node)->prev)
-	{
-		(*node)->prev->next = NULL;
-		(*node)->next->prev = NULL;	
-	}
-	else if ((*node)->next && (*node)->prev && (*node)->next != (*node)->prev)
-	{
-		(*node)->prev->next = (*node)->next;
-		(*node)->next->prev = (*node)->prev;	
-	}
-	else
-		return (free(node));
-	old_head = *node;
-	*node = (*node)->next;
-	free(old_head);
-}
-
-t_dlist	*ft_dlstadd_back(t_data *data, t_dlist *new)
-{
-	if (!data || !new)
-		return (NULL);
-	if (!data->tail)
-		data->tail = new;
-	else
-	{
-		data->tail->next = new;
-		new->prev = data->tail;
-		data->tail = new;
-	}
-	return (new);
-}
-
-t_dlist	*ft_dlstadd_front(t_data *data, t_dlist *new)
-{
-	if (!data || !new)
-		return (NULL);
-	if (!data->head || !data->tail)
-	{
-		data->head = new;
-		data->tail = new;
-	}
-	else
-	{
-		data->head->prev = new;
-		new->next = data->head;
-		data->head = new;
-		new->prev = data->tail;
-		data->tail->next = new;
-	}
-	return (new);
+	head = NULL;
+	i = -1;
+	while (++i < size)
+		ft_dlstadd_back(&head, ft_dlstnew(args[i]));
+	return (head);
 }
 
 void	lst_printer(t_dlist *lst)
 {
-	bool	check;
 	t_dlist	*node;
 
 	if (!lst)
 		return ;
 	node = lst;
-	check = false;
-	while (check == false || node != lst)
+	while (1)
 	{
-		printf("val: %i prev: %p next: %p\n", node->content, node->prev, node->next);
+		printf("val: %i prev: %p next: %p\n", node->content, node->prev,
+			node->next);
 		if (node->next)
 			node = node->next;
-		check = true;
+		if (node == lst)
+			break ;
 	}
 	printf("\n\n");
 }

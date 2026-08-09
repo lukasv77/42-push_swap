@@ -1,7 +1,12 @@
 *
 
 !.gitignore
-!push_swap.h
-!main.c
-!utils.c
 !README.md
+!push_swap.h
+
+!bubble_sort.c
+!dlist_checks.c
+!dlist_utils.c
+!main.c
+!operations.c
+!utils.c

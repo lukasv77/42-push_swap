@@ -1,28 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   dlist_checks.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: llinda <llinda@student.42warsaw.pl>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/08/08 13:45:41 by llinda            #+#    #+#             */
-/*   Updated: 2026/08/09 15:45:01 by llinda           ###   ########.fr       */
+/*   Created: 2026/08/09 15:48:05 by llinda            #+#    #+#             */
+/*   Updated: 2026/08/09 15:53:32 by llinda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stddef.h>
+#include <stdbool.h>
 
-int	main(void)
+bool	is_single_or_pair(t_dlist *node)
 {
-	t_dlist	*a;
-	t_dlist	*b;
-//	int		args[6] = {2, 1, 3, 5, 6 , 4};
-	int		args[6] = {7, 4, 2, 0, -1, 8};
+	return (node->next && node->prev && node->next == node->prev);
+}
 
-	a = NULL;
-	b = NULL;
-	a = create_a(args, 6);
-	bubble_sort(&a, &b);
-	lst_printer(a);
+bool	is_in_circular_list(t_dlist *node)
+{
+	return (node->next && node->prev && node->next != node->prev);
 }
