@@ -6,7 +6,7 @@
 /*   By: mmankows <mmankows@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/08 10:13:09 by mmankows          #+#    #+#             */
-/*   Updated: 2026/08/10 20:51:37 by mmankows         ###   ########.fr       */
+/*   Updated: 2026/08/10 21:21:29 by mmankows         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,6 @@ t_dlist	*ft_dlstnew(int content);
 void	ft_dlstdelone(t_dlist **node);
 t_dlist	*ft_dlstadd_back(t_dlist **head, t_dlist *new);
 t_dlist	*ft_dlstadd_front(t_dlist **head, t_dlist *new);
-void	lst_printer(t_dlist *lst);
 int		ft_dlstsize(t_dlist *lst);
 void	free_stack(t_dlist **head);
 

@@ -6,7 +6,7 @@
 /*   By: mmankows <mmankows@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/09 15:33:06 by llinda            #+#    #+#             */
-/*   Updated: 2026/08/10 20:52:03 by mmankows         ###   ########.fr       */
+/*   Updated: 2026/08/10 21:44:33 by mmankows         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ static size_t	bubble_pass(t_dlist **a, t_dlist *first, t_stats *stats)
 	swap_cnt = 0;
 	while (1)
 	{
+		if (!*a || !(*a)->next)
+			break ;
 		if ((*a)->content > (*a)->next->content)
 		{
 			sa(a, stats);

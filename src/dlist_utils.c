@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   dlist_utils.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: llinda <llinda@student.42warsaw.pl>        +#+  +:+       +#+        */
+/*   By: mmankows <mmankows@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/08/09 15:35:34 by llinda            #+#    #+#             */
-/*   Updated: 2026/08/09 15:47:58 by llinda           ###   ########.fr       */
+/*   Created: 2026/08/09 15:35:34 by username          #+#    #+#             */
+/*   Updated: 2026/08/10 21:41:12 by mmankows         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,19 @@ t_dlist	*ft_dlstadd_back(t_dlist **head, t_dlist *new)
 
 t_dlist	*ft_dlstadd_front(t_dlist **head, t_dlist *new)
 {
-	ft_dlstadd_back(head, new);
+	if (!head || !new)
+		return (NULL);
+	if (!*head)
+	{
+		*head = new;
+		new->next = new;
+		new->prev = new;
+		return (new);
+	}
+	new->next = *head;
+	new->prev = (*head)->prev;
+	(*head)->prev->next = new;
+	(*head)->prev = new;
 	*head = new;
 	return (new);
 }

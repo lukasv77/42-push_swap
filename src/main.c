@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                       :::      ::::::::    */
-/*   main.c                                            :+:      :+:    :+:    */
-/*                                                   +:+ +:+         +:+      */
-/*   By: username <username@student.42tokyo.jp>    #+#  +:+       +#+         */
-/*                                               +#+#+#+#+#+   +#+            */
-/*   Created: 2026/08/08 13:45:41 by username         #+#    #+#              */
-/*   Updated: 2026/08/10 20:58:15 by username        ###   ########.fr        */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mmankows <mmankows@student.42warsaw.pl>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/08/08 13:45:41 by username          #+#    #+#             */
+/*   Updated: 2026/08/10 21:41:21 by mmankows         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,17 +16,17 @@ static char	**parse_flags(int *argc, char **argv, t_stats *stats)
 {
 	stats->strategy = STRAT_ADAPTIVE;
 	stats->bench = false;
-	while (*argc > 1)
+	while ((*argc) > 1)
 	{
-		if (ft_strncmp(argv[1], "--simple", 9) == 0)
+		if (ft_strncmp(argv[0], "--simple", 9) == 0)
 			stats->strategy = STRAT_SIMPLE;
-		else if (ft_strncmp(argv[1], "--medium", 9) == 0)
+		else if (ft_strncmp(argv[0], "--medium", 9) == 0)
 			stats->strategy = STRAT_MEDIUM;
-		else if (ft_strncmp(argv[1], "--complex", 10) == 0)
+		else if (ft_strncmp(argv[0], "--complex", 10) == 0)
 			stats->strategy = STRAT_COMPLEX;
-		else if (ft_strncmp(argv[1], "--adaptive", 11) == 0)
+		else if (ft_strncmp(argv[0], "--adaptive", 11) == 0)
 			stats->strategy = STRAT_ADAPTIVE;
-		else if (ft_strncmp(argv[1], "--bench", 8) == 0)
+		else if (ft_strncmp(argv[0], "--bench", 8) == 0)
 			stats->bench = true;
 		else
 			break ;
