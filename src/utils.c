@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: llinda <llinda@student.42warsaw.pl>        +#+  +:+       +#+        */
+/*   By: mmankows <mmankows@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/08/08 16:59:45 by llinda            #+#    #+#             */
-/*   Updated: 2026/08/09 15:47:19 by llinda           ###   ########.fr       */
+/*   Created: 2026/08/08 16:59:45 by username          #+#    #+#             */
+/*   Updated: 2026/08/10 21:10:48 by mmankows         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,8 @@ void	lst_printer(t_dlist *lst)
 	node = lst;
 	while (1)
 	{
-		printf("val: %i prev: %i next: %i\n", node->content, node->prev->content,
+		printf("val: %i prev: %i next: %i\n",
+			node->content, node->prev->content,
 			node->next->content);
 		if (node->next)
 			node = node->next;
@@ -42,4 +43,24 @@ void	lst_printer(t_dlist *lst)
 			break ;
 	}
 	printf("\n\n");
+}
+
+void	free_stack(t_dlist **head)
+{
+	t_dlist	*current;
+	t_dlist	*next;
+	int		size;
+
+	if (!head || !*head)
+		return ;
+	size = ft_dlstsize(*head);
+	current = *head;
+	while (size > 0)
+	{
+		next = current->next;
+		free(current);
+		current = next;
+		size--;
+	}
+	*head = NULL;
 }
