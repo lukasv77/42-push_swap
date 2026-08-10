@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   bubble_sort.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: llinda <llinda@student.42warsaw.pl>        +#+  +:+       +#+        */
+/*   By: mmankows <mmankows@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/09 15:33:06 by llinda            #+#    #+#             */
-/*   Updated: 2026/08/09 15:45:26 by llinda           ###   ########.fr       */
+/*   Updated: 2026/08/10 20:35:30 by mmankows         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static size_t	bubble_pass(t_dlist **a, t_dlist *first)
+static size_t	bubble_pass(t_dlist **a, t_dlist *first, t_stats *stats)
 {
 	size_t	swap_cnt;
 
@@ -21,27 +21,27 @@ static size_t	bubble_pass(t_dlist **a, t_dlist *first)
 	{
 		if ((*a)->content > (*a)->next->content)
 		{
-			s(a);
+			sa(a, stats);
 			swap_cnt++;
 		}
-		r(a);
+		ra(a, stats);
 		if ((*a)->next == first)
 			break ;
 	}
 	return (swap_cnt);
 }
 
-static void	restore_stack(t_dlist **a, t_dlist **b)
+static void	restore_stack(t_dlist **a, t_dlist **b, t_stats *stats)
 {
-	r(a);
+	ra(a, stats);
 	while (*b)
 	{
-		p(b, a);
-		r(a);
+		pa(a, b, stats);
+		ra(a, stats);
 	}
 }
 
-void	bubble_sort(t_dlist **a, t_dlist **b)
+void	bubble_sort(t_dlist **a, t_dlist **b, t_stats *stats)
 {
 	size_t	swap_cnt;
 	t_dlist	*first;
@@ -50,10 +50,10 @@ void	bubble_sort(t_dlist **a, t_dlist **b)
 	swap_cnt = 1;
 	while (swap_cnt > 0)
 	{
-		swap_cnt = bubble_pass(a, first);
+		swap_cnt = bubble_pass(a, first, stats);
 		if (swap_cnt != 0)
-			p(a, b);
+			pb(a, b, stats);
 		else
-			restore_stack(a, b);
+			restore_stack(a, b, stats);
 	}
 }

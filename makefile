@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#   By: mmankows <mmankows@student.42warsaw.pl>    +#+  +:+       +#+          #
+#    By: mmankows <mmankows@student.42warsaw.pl>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/06/18 12:28:27 by mmankows          #+#    #+#              #
-#    Updated: 2026/08/09 20:59:31 by mmankows         ###   ########.fr        #
+#    Updated: 2026/08/10 20:39:45 by mmankows         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,7 +30,9 @@ PS_SRCS = bubble_sort.c \
 			operations3.c \
 			parser.c \
 			parser_utils.c \
-			utils.c
+			utils.c \
+			benchmark.c \
+			disorder.c
 
 PS_OBJS = $(addprefix $(OBJ_DIR)/, $(PS_SRCS:.c=.o))
 
