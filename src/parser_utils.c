@@ -54,22 +54,17 @@ int	ft_safe_atoi(char *str, int *error)
 	return ((int)(res * sign));
 }
 
-bool	has_duplicates(int *arr, int size)
+void	free_split(char **split)
 {
 	int	i;
-	int	j;
 
+	if (!split)
+		return ;
 	i = 0;
-	while (i < size)
+	while (split[i])
 	{
-		j = i + 1;
-		while (j < size)
-		{
-			if (arr[i] == arr[j])
-				return (true);
-			j++;
-		}
+		free(split[i]);
 		i++;
 	}
-	return (false);
+	free(split);
 }

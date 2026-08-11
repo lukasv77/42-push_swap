@@ -6,7 +6,7 @@
 /*   By: mmankows <mmankows@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/08 10:13:09 by mmankows          #+#    #+#             */
-/*   Updated: 2026/08/11 07:59:29 by mmankows         ###   ########.fr       */
+/*   Updated: 2026/08/11 12:53:49 by mmankows         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,10 +67,10 @@ void	rr_both(t_dlist **a, t_dlist **b, t_stats *stats);
 void	rra(t_dlist **a, t_stats *stats);
 void	rrb(t_dlist **b, t_stats *stats);
 void	rrr(t_dlist **a, t_dlist **b, t_stats *stats);
-void	s(t_dlist **head);
-void	p(t_dlist **src, t_dlist **dst);
-void	r(t_dlist **head);
-void	rr(t_dlist **head);
+bool	s(t_dlist **head);
+bool	p(t_dlist **src, t_dlist **dst);
+bool	r(t_dlist **head);
+bool	rr(t_dlist **head);
 void	bubble_sort(t_dlist **a, t_dlist **b, t_stats *stats);
 
 // List utilities and checks
@@ -87,10 +87,8 @@ void	free_stack(t_dlist **head);
 bool	parse_arguments(char **argv, t_dlist **stack_a);
 bool	is_valid_number(char *str);
 int		ft_safe_atoi(char *str, int *error);
-bool	has_duplicates(int *arr, int size);
 void	ft_print_error(void);
 void	free_split(char **split);
-int		*ft_parse_error(char **args, int *arr, int argc);
 
 // Disorder and Benchmark
 int		get_disorder_metric(t_dlist *lst);

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   operations2.c                                      :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: mmankows <mmankows@student.42warsaw.pl>    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/08/11 08:02:03 by mmankows          #+#    #+#             */
-/*   Updated: 2026/08/11 08:02:03 by mmankows         ###   ########.fr       */
+/*                                                       :::      ::::::::    */
+/*   operations2.c                                     :+:      :+:    :+:    */
+/*                                                   +:+ +:+         +:+      */
+/*   By: username <username@student.42tokyo.jp>    #+#  +:+       +#+         */
+/*                                               +#+#+#+#+#+   +#+            */
+/*   Created: 2026/08/11 08:02:03 by username         #+#    #+#              */
+/*   Updated: 2026/08/11 12:53:00 by username        ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,56 +14,65 @@
 
 void	sa(t_dlist **a, t_stats *stats)
 {
-	s(a);
-	ft_printf("sa\n");
-	if (stats)
+	if (s(a))
 	{
-		stats->sa++;
-		stats->total_ops++;
+		ft_printf("sa\n");
+		if (stats)
+		{
+			stats->sa++;
+			stats->total_ops++;
+		}
 	}
 }
 
 void	sb(t_dlist **b, t_stats *stats)
 {
-	s(b);
-	ft_printf("sb\n");
-	if (stats)
+	if (s(b))
 	{
-		stats->sb++;
-		stats->total_ops++;
+		ft_printf("sb\n");
+		if (stats)
+		{
+			stats->sb++;
+			stats->total_ops++;
+		}
 	}
 }
 
 void	ss(t_dlist **a, t_dlist **b, t_stats *stats)
 {
-	s(a);
-	s(b);
-	ft_printf("ss\n");
-	if (stats)
+	if (s(a) && s(b))
 	{
-		stats->ss++;
-		stats->total_ops++;
+		ft_printf("ss\n");
+		if (stats)
+		{
+			stats->ss++;
+			stats->total_ops++;
+		}
 	}
 }
 
 void	pa(t_dlist **a, t_dlist **b, t_stats *stats)
 {
-	p(b, a);
-	ft_printf("pa\n");
-	if (stats)
+	if (p(b, a))
 	{
-		stats->pa++;
-		stats->total_ops++;
+		ft_printf("pa\n");
+		if (stats)
+		{
+			stats->pa++;
+			stats->total_ops++;
+		}
 	}
 }
 
 void	pb(t_dlist **a, t_dlist **b, t_stats *stats)
 {
-	p(a, b);
-	ft_printf("pb\n");
-	if (stats)
+	if (p(a, b))
 	{
-		stats->pb++;
-		stats->total_ops++;
+		ft_printf("pb\n");
+		if (stats)
+		{
+			stats->pb++;
+			stats->total_ops++;
+		}
 	}
 }

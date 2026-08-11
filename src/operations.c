@@ -5,53 +5,68 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmankows <mmankows@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/08/11 08:02:10 by mmankows          #+#    #+#             */
-/*   Updated: 2026/08/11 08:02:11 by mmankows         ###   ########.fr       */
+/*   Created: 2026/08/11 08:02:10 by username          #+#    #+#             */
+/*   Updated: 2026/08/11 12:52:36 by mmankows         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	s(t_dlist **head)
+bool	s(t_dlist **head)
 {
 	int	tmp;
 
-	if (!head || !*head || !(*head)->next)
-		return ;
+	if (!head || !*head || !(*head)->next || (*head)->next == *head)
+		return (false);
 	tmp = (*head)->content;
 	(*head)->content = (*head)->next->content;
 	(*head)->next->content = tmp;
+	return (true);
 }
 
-void	p(t_dlist **src, t_dlist **dst)
+bool	p(t_dlist **src, t_dlist **dst)
 {
-	if (!src || !*src)
-		return ;
-	*dst = ft_dlstadd_front(dst, ft_dlstnew((*src)->content));
+	t_dlist	*node;
+
+	if (!src || !*src || !dst)
+		return (false);
+	node = ft_dlstnew((*src)->content);
+	if (!node)
+		return (false);
+	if (!ft_dlstadd_front(dst, node))
+	{
+		free(node);
+		return (false);
+	}
 	ft_dlstdelone(src);
+	return (true);
 }
 
-void	r(t_dlist **head)
+bool	r(t_dlist **head)
 {
-	if (!head || !*head)
-		return ;
+	if (!head || !*head || (*head)->next == *head)
+		return (false);
 	*head = (*head)->next;
+	return (true);
 }
 
-void	rr(t_dlist **head)
+bool	rr(t_dlist **head)
 {
-	if (!head || !*head)
-		return ;
+	if (!head || !*head || (*head)->prev == *head)
+		return (false);
 	*head = (*head)->prev;
+	return (true);
 }
 
 void	ra(t_dlist **a, t_stats *stats)
 {
-	r(a);
-	ft_printf("ra\n");
-	if (stats)
+	if (r(a))
 	{
-		stats->ra++;
-		stats->total_ops++;
+		ft_printf("ra\n");
+		if (stats)
+		{
+			stats->ra++;
+			stats->total_ops++;
+		}
 	}
 }
