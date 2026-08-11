@@ -6,7 +6,7 @@
 #    By: llinda <llinda@student.42warsaw.pl>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/06/30 11:34:22 by llinda            #+#    #+#              #
-#    Updated: 2026/06/30 17:13:20 by llinda           ###   ########.fr        #
+#    Updated: 2026/08/11 17:16:49 by mmankows         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,16 +28,16 @@ CFLAGS = -g -Wall -Wextra -Werror
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	ar rcs $(NAME) $(OBJ)
+	@ar rcs $(NAME) $(OBJ)
 
 %.o: %.c libft.h
-	$(CC) -c $(CFLAGS) $<
+	@$(CC) -c $(CFLAGS) $<
 
 clean:
-	rm -f $(OBJ)
+	@rm -f $(OBJ)
 
 fclean: clean
-	rm -f $(NAME)
+	@rm -f $(NAME)
 
 re: fclean all
 

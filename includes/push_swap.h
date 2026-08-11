@@ -6,7 +6,7 @@
 /*   By: mmankows <mmankows@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/08 10:13:09 by mmankows          #+#    #+#             */
-/*   Updated: 2026/08/11 12:53:49 by mmankows         ###   ########.fr       */
+/*   Updated: 2026/08/11 13:12:13 by mmankows         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,8 +74,6 @@ bool	rr(t_dlist **head);
 void	bubble_sort(t_dlist **a, t_dlist **b, t_stats *stats);
 
 // List utilities and checks
-bool	is_single_or_pair(t_dlist *node);
-bool	is_in_circular_list(t_dlist *node);
 t_dlist	*ft_dlstnew(int content);
 void	ft_dlstdelone(t_dlist **node);
 t_dlist	*ft_dlstadd_back(t_dlist **head, t_dlist *new);

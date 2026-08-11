@@ -6,11 +6,11 @@
 /*   By: mmankows <mmankows@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/11 08:02:17 by mmankows          #+#    #+#             */
-/*   Updated: 2026/08/11 08:19:16 by mmankows         ###   ########.fr       */
+/*   Updated: 2026/08/11 15:33:29 by mmankows         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "push_swap.h"// ./push_swap --simple --medium 3 2 1 5 4 3
 
 static void	parse_flags(int *argc, char ***argv, t_stats *stats)
 {

@@ -6,7 +6,7 @@
 /*   By: mmankows <mmankows@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/09 15:35:34 by llinda            #+#    #+#             */
-/*   Updated: 2026/08/11 08:03:56 by mmankows         ###   ########.fr       */
+/*   Updated: 2026/08/11 13:11:53 by mmankows         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,26 +29,19 @@ void	ft_dlstdelone(t_dlist **node)
 {
 	t_dlist	*old_head;
 
-	if (!node)
+	if (!node || !*node)
 		return ;
-	if (is_single_or_pair(*node))
+	old_head = *node;
+	if (old_head->next == old_head)
 	{
-		(*node)->prev->next = NULL;
-		(*node)->next->prev = NULL;
-	}
-	else if (is_in_circular_list(*node))
-	{
-		(*node)->prev->next = (*node)->next;
-		(*node)->next->prev = (*node)->prev;
+		*node = NULL;
 	}
 	else
 	{
-		old_head = *node;
-		*node = NULL;
-		return (free(old_head));
+		old_head->prev->next = old_head->next;
+		old_head->next->prev = old_head->prev;
+		*node = old_head->next;
 	}
-	old_head = *node;
-	*node = (*node)->next;
 	free(old_head);
 }
 

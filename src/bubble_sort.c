@@ -6,7 +6,7 @@
 /*   By: mmankows <mmankows@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/09 15:33:06 by llinda            #+#    #+#             */
-/*   Updated: 2026/08/10 21:44:33 by mmankows         ###   ########.fr       */
+/*   Updated: 2026/08/11 13:09:55 by mmankows         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,10 +48,10 @@ void	bubble_sort(t_dlist **a, t_dlist **b, t_stats *stats)
 	size_t	swap_cnt;
 	t_dlist	*first;
 
-	first = *a;
 	swap_cnt = 1;
-	while (swap_cnt > 0)
+	while (swap_cnt > 0 && *a)
 	{
+		first = *a;
 		swap_cnt = bubble_pass(a, first, stats);
 		if (swap_cnt != 0)
 			pb(a, b, stats);

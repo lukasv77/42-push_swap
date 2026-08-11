@@ -3,21 +3,11 @@
 /*                                                        :::      ::::::::   */
 /*   dlist_checks.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: llinda <llinda@student.42warsaw.pl>        +#+  +:+       +#+        */
+/*   By: mmankows <mmankows@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/09 15:48:05 by llinda            #+#    #+#             */
-/*   Updated: 2026/08/09 15:53:32 by llinda           ###   ########.fr       */
+/*   Updated: 2026/08/11 13:12:22 by mmankows         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-bool	is_single_or_pair(t_dlist *node)
-{
-	return (node->next && node->prev && node->next == node->prev);
-}
-
-bool	is_in_circular_list(t_dlist *node)
-{
-	return (node->next && node->prev && node->next != node->prev);
-}
