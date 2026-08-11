@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmankows <mmankows@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/08/10 16:00:00 by mmankows          #+#    #+#             */
-/*   Updated: 2026/08/10 16:00:00 by mmankows         ###   ########.fr       */
+/*   Created: 2026/08/11 08:04:34 by mmankows          #+#    #+#             */
+/*   Updated: 2026/08/11 08:04:34 by mmankows         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,9 +53,9 @@ static void	print_strategy_and_ops(t_stats *stats)
 {
 	ft_putstr_fd("[bench] strategy: ", 2);
 	if (stats->strategy == STRAT_SIMPLE)
-		ft_putstr_fd("Simple / O(n^2)\n", 2);
+		ft_putstr_fd("Simple /  O(n2)\n", 2);
 	else if (stats->strategy == STRAT_MEDIUM)
-		ft_putstr_fd("Medium / O(n*sqrt(n))\n", 2);
+		ft_putstr_fd("Medium / O(n√n)\n", 2);
 	else if (stats->strategy == STRAT_COMPLEX)
 		ft_putstr_fd("Complex / O(n log n)\n", 2);
 	else

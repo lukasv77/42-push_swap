@@ -6,7 +6,7 @@
 /*   By: mmankows <mmankows@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/08 10:13:09 by mmankows          #+#    #+#             */
-/*   Updated: 2026/08/10 21:21:29 by mmankows         ###   ########.fr       */
+/*   Updated: 2026/08/11 07:59:29 by mmankows         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,7 @@ int		ft_dlstsize(t_dlist *lst);
 void	free_stack(t_dlist **head);
 
 // Parsing and Errors
-bool	parse_arguments(int argc, char **argv, t_dlist **a);
+bool	parse_arguments(char **argv, t_dlist **stack_a);
 bool	is_valid_number(char *str);
 int		ft_safe_atoi(char *str, int *error);
 bool	has_duplicates(int *arr, int size);

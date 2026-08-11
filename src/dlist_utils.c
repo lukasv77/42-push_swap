@@ -5,13 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmankows <mmankows@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/08/09 15:35:34 by username          #+#    #+#             */
-/*   Updated: 2026/08/10 21:41:12 by mmankows         ###   ########.fr       */
+/*   Created: 2026/08/09 15:35:34 by llinda            #+#    #+#             */
+/*   Updated: 2026/08/11 08:03:56 by mmankows         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdlib.h>
 
 t_dlist	*ft_dlstnew(int content)
 {
