@@ -6,7 +6,7 @@
 /*   By: mmankows <mmankows@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/11 08:02:17 by mmankows          #+#    #+#             */
-/*   Updated: 2026/08/11 08:03:27 by mmankows         ###   ########.fr       */
+/*   Updated: 2026/08/11 08:19:16 by mmankows         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 static void	parse_flags(int *argc, char ***argv, t_stats *stats)
 {
+	(*argv)++;
+	(*argc)--;
 	stats->strategy = STRAT_ADAPTIVE;
 	stats->bench = false;
 	while ((*argc) > 1)
