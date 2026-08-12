@@ -6,7 +6,7 @@
 /*   By: mmankows <mmankows@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/08 10:13:09 by mmankows          #+#    #+#             */
-/*   Updated: 2026/08/11 13:12:13 by mmankows         ###   ########.fr       */
+/*   Updated: 2026/08/12 17:23:38 by mmankows         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,8 @@ bool	p(t_dlist **src, t_dlist **dst);
 bool	r(t_dlist **head);
 bool	rr(t_dlist **head);
 void	bubble_sort(t_dlist **a, t_dlist **b, t_stats *stats);
+void	medium_sort(t_dlist **a, t_dlist **b, t_stats *stats);
+void	complex_sort(t_dlist **a, t_dlist **b, t_stats *stats);
 
 // List utilities and checks
 t_dlist	*ft_dlstnew(int content);

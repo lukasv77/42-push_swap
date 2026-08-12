@@ -6,7 +6,7 @@
 #    By: mmankows <mmankows@student.42warsaw.pl>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/06/18 12:28:27 by mmankows          #+#    #+#              #
-#    Updated: 2026/08/10 20:39:45 by mmankows         ###   ########.fr        #
+#    Updated: 2026/08/12 17:24:01 by mmankows         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,7 +32,9 @@ PS_SRCS = bubble_sort.c \
 			parser_utils.c \
 			utils.c \
 			benchmark.c \
-			disorder.c
+			disorder.c \
+			medium_sort.c \
+			complex_sort.c
 
 PS_OBJS = $(addprefix $(OBJ_DIR)/, $(PS_SRCS:.c=.o))
 

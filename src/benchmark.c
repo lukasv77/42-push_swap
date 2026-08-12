@@ -53,13 +53,20 @@ static void	print_strategy_and_ops(t_stats *stats)
 {
 	ft_putstr_fd("[bench] strategy: ", 2);
 	if (stats->strategy == STRAT_SIMPLE)
-		ft_putstr_fd("Simple /  O(n2)\n", 2);
+		ft_putstr_fd("Simple /  O(n²)\n", 2);
 	else if (stats->strategy == STRAT_MEDIUM)
 		ft_putstr_fd("Medium / O(n√n)\n", 2);
 	else if (stats->strategy == STRAT_COMPLEX)
 		ft_putstr_fd("Complex / O(n log n)\n", 2);
 	else
-		ft_putstr_fd("Adaptive / O(n*sqrt(n))\n", 2);
+	{
+		if (stats->disorder < 20.0)
+			ft_putstr_fd("Adaptive / O(n²)\n", 2);
+		else if (stats->disorder < 50.0)
+			ft_putstr_fd("Adaptive / O(n√n)\n", 2);
+		else
+			ft_putstr_fd("Adaptive / O(n log n)\n", 2);
+	}
 	ft_putstr_fd("[bench] total_ops: ", 2);
 	ft_putnbr_fd(stats->total_ops, 2);
 	ft_putstr_fd("\n", 2);

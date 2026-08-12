@@ -6,7 +6,7 @@
 /*   By: mmankows <mmankows@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/11 08:02:17 by mmankows          #+#    #+#             */
-/*   Updated: 2026/08/11 15:33:29 by mmankows         ###   ########.fr       */
+/*   Updated: 2026/08/12 17:23:45 by mmankows         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,17 +42,17 @@ static void	run_strategy(t_dlist **a, t_dlist **b, t_stats *stats)
 	if (stats->strategy == STRAT_SIMPLE)
 		bubble_sort(a, b, stats);
 	else if (stats->strategy == STRAT_MEDIUM)
-		bubble_sort(a, b, stats);
+		medium_sort(a, b, stats);
 	else if (stats->strategy == STRAT_COMPLEX)
-		bubble_sort(a, b, stats);
+		complex_sort(a, b, stats);
 	else
 	{
 		if (stats->disorder < 20.0)
 			bubble_sort(a, b, stats);
 		else if (stats->disorder < 50.0)
-			bubble_sort(a, b, stats);
+			medium_sort(a, b, stats);
 		else
-			bubble_sort(a, b, stats);
+			complex_sort(a, b, stats);
 	}
 }
 
