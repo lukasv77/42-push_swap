@@ -3,14 +3,34 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mmankows <mmankows@student.42warsaw.pl>    +#+  +:+       +#+        */
+/*   By: llinda <llinda@student.42warsaw.pl>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/11 08:02:17 by mmankows          #+#    #+#             */
-/*   Updated: 2026/08/12 17:23:45 by mmankows         ###   ########.fr       */
+/*   Updated: 2026/08/17 23:06:54 by llinda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"// ./push_swap --simple --medium 3 2 1 5 4 3
+
+/* static void	lst_printer(t_dlist *lst)
+{
+	t_dlist	*node;
+
+	if (!lst)
+		return ;
+	node = lst;
+	ft_printf("\n");
+	while (1)
+	{
+		ft_printf("val: %i prev: %p next: %p\n", node->content, node->prev,
+			node->next);
+		if (node->next)
+			node = node->next;
+		if (node == lst)
+			break ;
+	}
+	ft_printf("\n");
+} */
 
 static void	parse_flags(int *argc, char ***argv, t_stats *stats)
 {
@@ -40,7 +60,7 @@ static void	parse_flags(int *argc, char ***argv, t_stats *stats)
 static void	run_strategy(t_dlist **a, t_dlist **b, t_stats *stats)
 {
 	if (stats->strategy == STRAT_SIMPLE)
-		bubble_sort(a, b, stats);
+		insertion_sort(a, b, stats);
 	else if (stats->strategy == STRAT_MEDIUM)
 		medium_sort(a, b, stats);
 	else if (stats->strategy == STRAT_COMPLEX)
@@ -48,7 +68,7 @@ static void	run_strategy(t_dlist **a, t_dlist **b, t_stats *stats)
 	else
 	{
 		if (stats->disorder < 20.0)
-			bubble_sort(a, b, stats);
+			insertion_sort(a, b, stats);
 		else if (stats->disorder < 50.0)
 			medium_sort(a, b, stats);
 		else
@@ -74,6 +94,7 @@ int	main(int argc, char **argv)
 	run_strategy(&a, &b, &stats);
 	if (stats.bench)
 		print_benchmark(&stats);
+//	lst_printer(a);
 	free_stack(&a);
 	free_stack(&b);
 	return (0);

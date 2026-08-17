@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: mmankows <mmankows@student.42warsaw.pl>    +#+  +:+       +#+         #
+#    By: llinda <llinda@student.42warsaw.pl>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/06/18 12:28:27 by mmankows          #+#    #+#              #
-#    Updated: 2026/08/12 17:24:01 by mmankows         ###   ########.fr        #
+#    Updated: 2026/08/17 21:01:07 by llinda           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,6 +24,7 @@ PS_SRCS = bubble_sort.c \
 			dlist_checks.c \
 			dlist_utils.c \
 			errors.c \
+			insertion_sort.c \
 			main.c \
 			operations.c \
 			operations2.c \

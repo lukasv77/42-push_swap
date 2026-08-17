@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mmankows <mmankows@student.42warsaw.pl>    +#+  +:+       +#+        */
+/*   By: llinda <llinda@student.42warsaw.pl>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/08 10:13:09 by mmankows          #+#    #+#             */
-/*   Updated: 2026/08/12 17:23:38 by mmankows         ###   ########.fr       */
+/*   Updated: 2026/08/17 22:42:07 by llinda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ bool	s(t_dlist **head);
 bool	p(t_dlist **src, t_dlist **dst);
 bool	r(t_dlist **head);
 bool	rr(t_dlist **head);
-void	bubble_sort(t_dlist **a, t_dlist **b, t_stats *stats);
+void	insertion_sort(t_dlist **a, t_dlist **b, t_stats *stats);
 void	medium_sort(t_dlist **a, t_dlist **b, t_stats *stats);
 void	complex_sort(t_dlist **a, t_dlist **b, t_stats *stats);
 
