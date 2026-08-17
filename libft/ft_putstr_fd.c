@@ -1,24 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   dlist_checks.c                                     :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: llinda <llinda@student.42warsaw.pl>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/08/09 15:48:05 by llinda            #+#    #+#             */
-/*   Updated: 2026/08/09 15:53:32 by llinda           ###   ########.fr       */
+/*   Created: 2026/06/23 15:55:49 by llinda            #+#    #+#             */
+/*   Updated: 2026/06/26 19:37:39 by llinda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
-#include <stdbool.h>
+#include "libft.h"
 
-bool	is_single_or_pair(t_dlist *node)
+void	ft_putstr_fd(char *s, int fd)
 {
-	return (node->next && node->prev && node->next == node->prev);
+	if (!s)
+		return ;
+	write(fd, s, ft_strlen(s));
 }
 
-bool	is_in_circular_list(t_dlist *node)
+/* int	main(void)
 {
-	return (node->next && node->prev && node->next != node->prev);
-}
+	char	s1[] = "Hello Peer!";
+
+	ft_putstr_fd(s1, 2);
+} */

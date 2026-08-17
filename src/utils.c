@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: llinda <llinda@student.42warsaw.pl>        +#+  +:+       +#+        */
+/*   By: mmankows <mmankows@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/08/08 16:59:45 by llinda            #+#    #+#             */
-/*   Updated: 2026/08/09 15:47:19 by llinda           ###   ########.fr       */
+/*   Created: 2026/08/08 16:59:45 by mmankows          #+#    #+#             */
+/*   Updated: 2026/08/11 08:01:13 by mmankows         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdio.h>
 
 t_dlist	*create_a(int *args, int size)
 {
@@ -25,21 +24,22 @@ t_dlist	*create_a(int *args, int size)
 	return (head);
 }
 
-void	lst_printer(t_dlist *lst)
+void	free_stack(t_dlist **head)
 {
-	t_dlist	*node;
+	t_dlist	*current;
+	t_dlist	*next;
+	int		size;
 
-	if (!lst)
+	if (!head || !*head)
 		return ;
-	node = lst;
-	while (1)
+	size = ft_dlstsize(*head);
+	current = *head;
+	while (size > 0)
 	{
-		printf("val: %i prev: %p next: %p\n", node->content, node->prev,
-			node->next);
-		if (node->next)
-			node = node->next;
-		if (node == lst)
-			break ;
+		next = current->next;
+		free(current);
+		current = next;
+		size--;
 	}
-	printf("\n\n");
+	*head = NULL;
 }

@@ -1,28 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: llinda <llinda@student.42warsaw.pl>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/08/08 13:45:41 by llinda            #+#    #+#             */
-/*   Updated: 2026/08/09 15:45:01 by llinda           ###   ########.fr       */
+/*   Created: 2026/06/27 20:52:00 by llinda            #+#    #+#             */
+/*   Updated: 2026/06/27 21:46:42 by llinda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
-#include <stddef.h>
+#include "libft.h"
 
-int	main(void)
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	t_dlist	*a;
-	t_dlist	*b;
-//	int		args[6] = {2, 1, 3, 5, 6 , 4};
-	int		args[6] = {7, 4, 2, 0, -1, 8};
-
-	a = NULL;
-	b = NULL;
-	a = create_a(args, 6);
-	bubble_sort(&a, &b);
-	lst_printer(a);
+	if (!lst || !new)
+		return ;
+	if (!*lst)
+		*lst = new;
+	else
+		ft_lstlast(*lst)->next = new;
 }
+
+/* int	main(void)
+{
+	t_list *lst = ft_lstnew((char *) "World");
+//	t_list *lst = NULL;
+	t_list *node3 = ft_lstnew((char *) "!");
+
+	ft_lstadd_back(&lst, node3);
+	while (lst)
+	{
+		printf ("%s", (char *) lst->content);
+		lst = lst->next;
+	}
+} */

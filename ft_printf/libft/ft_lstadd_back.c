@@ -1,38 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   operations.c                                       :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: llinda <llinda@student.42warsaw.pl>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/08/09 15:31:11 by llinda            #+#    #+#             */
-/*   Updated: 2026/08/09 15:43:48 by llinda           ###   ########.fr       */
+/*   Created: 2026/06/27 20:52:00 by llinda            #+#    #+#             */
+/*   Updated: 2026/06/27 21:46:42 by llinda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-void	s(t_dlist **head)
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	int	tmp;
-
-	tmp = (*head)->content;
-	(*head)->content = (*head)->next->content;
-	(*head)->next->content = tmp;
+	if (!lst || !new)
+		return ;
+	if (!*lst)
+		*lst = new;
+	else
+		ft_lstlast(*lst)->next = new;
 }
 
-void	p(t_dlist **src, t_dlist **dst)
+/* int	main(void)
 {
-	*dst = ft_dlstadd_front(dst, ft_dlstnew((*src)->content));
-	ft_dlstdelone(src);
-}
+	t_list *lst = ft_lstnew((char *) "World");
+//	t_list *lst = NULL;
+	t_list *node3 = ft_lstnew((char *) "!");
 
-void	r(t_dlist **head)
-{
-	*head = (*head)->next;
-}
-
-void	rr(t_dlist **head)
-{
-	*head = (*head)->prev;
-}
+	ft_lstadd_back(&lst, node3);
+	while (lst)
+	{
+		printf ("%s", (char *) lst->content);
+		lst = lst->next;
+	}
+} */
