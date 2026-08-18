@@ -6,11 +6,11 @@
 /*   By: llinda <llinda@student.42warsaw.pl>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/11 08:02:17 by mmankows          #+#    #+#             */
-/*   Updated: 2026/08/17 23:06:54 by llinda           ###   ########.fr       */
+/*   Updated: 2026/08/18 14:27:30 by llinda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"// ./push_swap --simple --medium 3 2 1 5 4 3
+#include "push_swap.h" // ./push_swap --simple --medium 3 2 1 5 4 3
 
 /* static void	lst_printer(t_dlist *lst)
 {
@@ -94,7 +94,6 @@ int	main(int argc, char **argv)
 	run_strategy(&a, &b, &stats);
 	if (stats.bench)
 		print_benchmark(&stats);
-//	lst_printer(a);
 	free_stack(&a);
 	free_stack(&b);
 	return (0);
