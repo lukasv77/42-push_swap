@@ -68,3 +68,29 @@ void	free_split(char **split)
 	}
 	free(split);
 }
+
+char	*join_args(char **argv)
+{
+	char	*joined;
+	int		len;
+	int		i;
+
+	len = 0;
+	i = 0;
+	while (argv[i])
+	{
+		if (!argv[i][0])
+			return (NULL);
+		len += ft_strlen(argv[i++]) + 1;
+	}
+	joined = ft_calloc(len + 1, sizeof(char));
+	if (!joined)
+		return (NULL);
+	i = 0;
+	while (argv[i])
+	{
+		ft_strlcat(joined, argv[i++], len + 1);
+		ft_strlcat(joined, " ", len + 1);
+	}
+	return (joined);
+}

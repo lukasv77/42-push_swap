@@ -6,7 +6,7 @@
 #    By: llinda <llinda@student.42warsaw.pl>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/06/18 12:28:27 by mmankows          #+#    #+#              #
-#    Updated: 2026/08/18 14:26:11 by llinda           ###   ########.fr        #
+#    Updated: 2026/08/21 15:45:17 by llinda           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,8 +20,7 @@ PRINTF_DIR = ./ft_printf
 SRC_DIR = ./src
 OBJ_DIR = ./obj
 
-PS_SRCS = bubble_sort.c \
-			dlist_checks.c \
+PS_SRCS = \
 			dlist_utils.c \
 			errors.c \
 			insertion_sort.c \

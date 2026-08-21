@@ -6,7 +6,7 @@
 /*   By: llinda <llinda@student.42warsaw.pl>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/17 19:27:24 by llinda            #+#    #+#             */
-/*   Updated: 2026/08/17 23:07:17 by llinda           ###   ########.fr       */
+/*   Updated: 2026/08/21 15:35:03 by llinda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,8 @@ void	insertion_sort(t_dlist **a, t_dlist **b, t_stats *stats)
 	size_t	pos;
 	size_t	size;
 
+	if (!a || !*a)
+		return ;
 	while (ft_dlstsize(*a) > 0)
 	{
 		node = *b;

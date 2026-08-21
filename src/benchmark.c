@@ -34,7 +34,7 @@ static void	print_disorder_fd(double disorder, int fd)
 	int	dec_part;
 
 	int_part = (int)disorder;
-	dec_part = (int)((disorder - int_part) * 100.5);
+	dec_part = (int)((disorder - int_part) * 100 + 0.5);
 	if (dec_part >= 100)
 	{
 		int_part++;

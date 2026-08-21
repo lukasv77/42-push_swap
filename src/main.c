@@ -6,7 +6,7 @@
 /*   By: llinda <llinda@student.42warsaw.pl>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/11 08:02:17 by mmankows          #+#    #+#             */
-/*   Updated: 2026/08/18 14:27:30 by llinda           ###   ########.fr       */
+/*   Updated: 2026/08/21 13:00:44 by llinda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,7 +86,7 @@ int	main(int argc, char **argv)
 	b = NULL;
 	ft_bzero(&stats, sizeof(t_stats));
 	parse_flags(&argc, &argv, &stats);
-	if (argc < 2)
+	if (argc < 1)
 		return (0);
 	if (!parse_arguments(argv, &a))
 		return (1);

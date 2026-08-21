@@ -52,22 +52,16 @@ static bool	append_node(t_dlist **stack_a, char *arg)
 
 static bool	get_args(char **argv, char ***args, int *allocated)
 {
-	if (argv[0] && argv[1] == NULL && ft_strchr(argv[0], ' '))
-	{
-		*args = ft_split(argv[0], ' ');
-		if (!*args || !(*args)[0])
-		{
-			if (*args)
-				free_split(*args);
-			return (false);
-		}
-		*allocated = 1;
-	}
-	else
-	{
-		*args = argv;
-		*allocated = 0;
-	}
+	char	*joined;
+
+	joined = join_args(argv);
+	if (!joined)
+		return (false);
+	*args = ft_split(joined, ' ');
+	free(joined);
+	if (!*args || !(*args)[0])
+		return (free_split(*args), false);
+	*allocated = 1;
 	return (true);
 }
 

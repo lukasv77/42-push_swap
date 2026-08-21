@@ -6,7 +6,7 @@
 /*   By: llinda <llinda@student.42warsaw.pl>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/08 10:13:09 by mmankows          #+#    #+#             */
-/*   Updated: 2026/08/17 22:42:07 by llinda           ###   ########.fr       */
+/*   Updated: 2026/08/21 14:51:09 by llinda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,6 +89,7 @@ bool	is_valid_number(char *str);
 int		ft_safe_atoi(char *str, int *error);
 void	ft_print_error(void);
 void	free_split(char **split);
+char	*join_args(char **argv);
 
 // Disorder and Benchmark
 int		get_disorder_metric(t_dlist *lst);
